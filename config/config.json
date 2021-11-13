@@ -1,4 +1,7 @@
 {
   "version": "1.0.0",
-  "process_rate_in_sec": 30
+  "mongodb": {
+    "url" : "localhost",
+    "port" : 27017
+  }
 }
