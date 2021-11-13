@@ -11,8 +11,6 @@ try:
     logger.info('##### CyBear - Cyber Security Data System #####')
     logger.info('Run mongo DB...')
     mongodb = MongoDbService()
-# logging.debug('Run sqlite db...')
-    # SqliteService()
     logger.info('Run server...')
     app.run(debug=True)
     logger.info('##### CyBear - Cyber Security Data System #####')
