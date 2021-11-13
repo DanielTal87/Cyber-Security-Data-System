@@ -11,7 +11,8 @@ The system collects cyber-security data from different sources
 
 ## How to run
 
-1. In the project directory, run: `./install.sh`
+1. The project runs with venv
+   1. If you wish not run as venv - In the project directory, run: `./install.sh`
 2. In terminal run `./run.sh`
 3. Check today's logs at: `/logs`
 
