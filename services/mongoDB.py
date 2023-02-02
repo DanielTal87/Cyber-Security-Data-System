@@ -14,7 +14,8 @@ DB_NAME = 'CSDS'  # Cyber Security Data System
 class MongoDbService(metaclass=SingletonMetaClass):
     def __init__(self):
         logger.info(f'MongoDbService / init - start')
-        self.__client = pymongo.MongoClient(config['mongodb']['url'], config['mongodb']['port'])
+        self.__client = pymongo.MongoClient(
+            config['mongodb']['url'], config['mongodb']['port'])
         logger.info(f'MongoDbService/init - end')
 
     @property

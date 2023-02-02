@@ -26,13 +26,13 @@ class HealthCheck(Resource):
             logger.error(
                 f'Server / HealthCheck | failed with an error: type = {error.__class__.__name__}, message = {error}')
             return {
-                       'message': 'Health check failed'
-                   }, 503
+                'message': 'Health check failed'
+            }, 503
         else:
             logger.info(f'Server / HealthCheck | Ended successfully')
             return {
-                       'message': "It's Alive, It's Alive..."
-                   }, 200
+                'message': "It's Alive, It's Alive..."
+            }, 200
 
 
 class CyberSecurityData(Resource):
@@ -47,8 +47,8 @@ class CyberSecurityData(Resource):
             args = parser.parse_args()
             if args['data'] is None:
                 return {
-                           'message': "The request must be json with format {'data': 'data_to_insert_as_json'}"
-                       }, 422
+                    'message': "The request must be json with format {'data': 'data_to_insert_as_json'}"
+                }, 422
             data = args['data']
             logger.debug(
                 f'CyberSecurityData / post | Insert a new cyber security data to the db | source = {source}, data = {data}')
@@ -61,16 +61,16 @@ class CyberSecurityData(Resource):
             logger.error(
                 f'CyberSecurityData / post | Ended with failure | Error: type = {error.__class__.__name__}, message = {error}')
             return {
-                       'message': "Insert a new cyber security data",
-                       'status': 'failed'
-                   }, 400
+                'message': "Insert a new cyber security data",
+                'status': 'failed'
+            }, 400
         else:
             logger.info(f'CyberSecurityData / post | Ended successfully')
             return {
-                       'id': connector.id,
-                       'message': "Insert a new cyber security data",
-                       'status': 'success'
-                   }, 201
+                'id': connector.id,
+                'message': "Insert a new cyber security data",
+                'status': 'success'
+            }, 201
 
     def get(self, source):
         """
@@ -85,15 +85,15 @@ class CyberSecurityData(Resource):
             logger.error(
                 f'CyberSecurityData / get | Ended with failure | Error: type = {error.__class__.__name__}, message = {error}')
             return {
-                       'message': 'Printing the {source} collection',
-                       'status': 'failed'
-                   }, 400
+                'message': 'Printing the {source} collection',
+                'status': 'failed'
+            }, 400
         else:
             logger.info(f'CyberSecurityData / post | Ended successfully')
             return {
-                       'message': f'Printing the {source} collection',
-                       'status': 'success'
-                   }, 201
+                'message': f'Printing the {source} collection',
+                'status': 'success'
+            }, 201
 
 
 api.add_resource(HealthCheck, '/health-check')
